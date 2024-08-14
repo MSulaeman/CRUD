@@ -18,17 +18,15 @@
     h1{
         margin-left:35rem;
     }
-    div {
-        width:45rem;
-    }
 </style>
 <body>
     <h1>Data Siswa</h1>
     <button class="add btn btn-success"><a href="tambah.php">Tambah Data Siswa</a></button>
-    <div class="shadow  m-3">
+    <div class="shadow  m-3" style="width:50rem;">
             
-            <table class="table">
+            <table class="table " style="border-radius:20px">
                 <tr class="table-active">
+                    <th>Id</th>
                     <th>Nama</th>
                     <th>Umur</th>
                     <th>Setting</th>
@@ -42,10 +40,11 @@
             ?>
 
                 <tr>
+                    <td><?= $siswa['id']?></td>
                     <td><?= $siswa['nama']?></td>
                     <td><?= $siswa['umur']?></td>
                     <td>
-                        <a href="edit.php?nama=<?= $siswa['nama']?>">
+                        <a href="edit.php?id=<?= $siswa['id']?>">
                         <button type="submit" class="btn btn-success">Edit</button></a>
                         <a href="delete.php?nama=<?= $siswa['nama']?>">
                         <button type="submit" class="btn btn-danger">Hapus</button></a>
