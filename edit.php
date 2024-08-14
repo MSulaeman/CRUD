@@ -9,7 +9,7 @@
 <style>
     form {
         width:15rem;
-        height:17rem;
+        height:23rem;
         border-radius:20px;
         margin-left:2rem;
         margin-top:2rem;
@@ -32,14 +32,18 @@
     <form action="update.php" method="post" class="shadow">
     <?php
         include 'koneksi.php';
-        $nama  = $_GET['nama'];  
-        $query = mysqli_query($conn,"SELECT * FROM siswa WHERE nama='$nama'");
+        $id    = $_GET['id'];  
+        $query = mysqli_query($conn,"SELECT * FROM siswa WHERE id='$id'");
         $siswa = mysqli_fetch_array($query);
         ?>
     <div class="none"><h1>Update Data</h1></div>
     <div class="mb-3 m-3 ">
-        <!-- <label  class="form-label">Nama</label> -->
-        <input  class="form-control" type="hidden" name="nama" id="" value="<?=$siswa['nama']?>">
+        <label  class="form-label">Id</label>
+        <input  class="form-control" type="text" name="id" id="" value="<?=$siswa['id']?>" readonly>
+    </div>
+    <div class="mb-3 m-3 ">
+        <label  class="form-label">Nama</label>
+        <input  class="form-control" type="text" name="nama" id="" value="<?=$siswa['nama']?>">
     </div>
     <div class="mb-3 m-3">
         <label  class="form-label">Umur</label>
