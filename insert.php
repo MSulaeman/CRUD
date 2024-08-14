@@ -5,7 +5,7 @@
     $umur = $_POST['umur'];
 
 
-    $sql = "INSERT INTO siswa VALUES('$nama','$umur')";
+    $sql = "INSERT INTO siswa VALUES('', '$nama','$umur')";
     $query = mysqli_query($conn, $sql);
 
     header("Location: index.php");
